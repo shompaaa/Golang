@@ -27,15 +27,18 @@ func div(x, y float32) float32 {
 func main(){
 
 	var num1, num2, result float32
-var option string
+	var option string
+	i:= true
 
-//Taking input from user
-fmt.Print("Enter your first number: ")
-fmt.Scan(&num1)
-fmt.Print("Enter your second number: ")
-fmt.Scan(&num2)
-fmt.Print("Enter your option (+, -, *, /): ")
-fmt.Scan(&option)
+
+for i == true{
+	//Taking input from user
+	fmt.Print("Enter your first number: ")
+	fmt.Scan(&num1)
+	fmt.Print("Enter your second number: ")
+	fmt.Scan(&num2)
+	fmt.Print("Enter your option (+, -, *, /): ")
+	fmt.Scan(&option)
 
 	switch option {
 	case "+":
@@ -51,8 +54,10 @@ fmt.Scan(&option)
 		result = div(num1,num2)
 
 	default:
-		fmt.Println("Invalid number")
+		fmt.Println("Invalid Option")
+		continue
 	}
+	fmt.Printf("Result = %0.2f\n", result)
+}
 
-	fmt.Printf("Result = %0.2f", result)
 }
